@@ -1,0 +1,119 @@
+body {
+  /* Hier wird mit Margin der äußerste Rand entfernd und die Hintergrundfarbe gewählt*/
+  margin: 0;
+  background-color: black;
+  font-family: "Lato", sans-serif;
+}
+
+#pictures {
+  /* Hier werden die Bilder nebeneinander gelistet */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.imgs {
+  /* Die Höhe der Bilder wird hier bestimmt und der Abstand zwischen den Einzelnen Div´s */
+  height: 200px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.imgs img {
+  /* Hier werden die Bilder so angepasst das sie je nach Größe die Qualität beibehalten wird */
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.header {
+  /* Hier wird die Größe, Position und Farbe des Headers bestimmt */
+  color: white;
+  text-align: center;
+  font-size: xxx-large;
+  padding: 30px;
+}
+
+.openImgs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.openImgs img {
+  /* Hier werden die geöffneten Bilder angepasst */
+  object-fit: contain;
+  height: 600px;
+}
+
+.close-btn {
+  /* Hier wird das Icon für den Close Button fixiert und mit z-index hervorgeholt */
+  position: fixed;
+  z-index: 2;
+  top: 70px;
+  filter: invert(1);
+  cursor: pointer;
+}
+
+.leftRight {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 45px; /* Abstand zum unteren Rand */
+  left: 0;
+  right: 0;
+}
+
+.leftRight img {
+  height: 50px; /* Höhe der Pfeile anpassen */
+  margin: 0 10px; /* Abstand zwischen den Pfeilen anpassen */
+  filter: invert(1);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  /* Für Bildschirmgrößen bis 768px Breite */
+
+  .imgs {
+    height: 150px;
+  }
+
+  .imgs img {
+    height: 100%;
+  }
+
+  .openImgs img {
+    height: 400px;
+  }
+
+  .leftRight img {
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Für Bildschirmgrößen bis 480px Breite */
+
+  .imgs {
+    height: 100px;
+  }
+
+  .imgs img {
+    height: 100%;
+  }
+
+  .openImgs img {
+    height: 300px;
+  }
+
+  .leftRight img {
+    height: 80px;
+  }
+}
